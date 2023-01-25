@@ -43,6 +43,21 @@ T InstantiateGenericType<T>(T obj) where T : class, new()
 
 ListMethodsAndProperties(InstantiateGenericType(new MyClass()));
 
+MyClass myClass = new();
+
+myClass.PublicProperty = "Teste";
+
+MyClass newMyClass = InstantiateGenericType(myClass);
+
+newMyClass.PublicProperty = "Teste2";
+
+Console.WriteLine(myClass.PublicProperty);
+Console.WriteLine(newMyClass.PublicProperty);
+
+
+
+
+
 class MyClass
 {
     private int PrivateProperty { get; set; }
